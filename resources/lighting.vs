@@ -19,7 +19,7 @@ out vec3 fragNormal;
 
 // NOTE: Add here your custom variables
 
-void main()
+void Main()
 {
     // Send vertex attributes to fragment shader
     fragPosition = vec3(matModel*vec4(vertexPosition, 1.0));
