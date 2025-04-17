@@ -1,0 +1,54 @@
+﻿id;name;life;description;rarity;type;effect;origin
+1;Tralalero Tralala;100;Picchia con una mazza;0;1;0;Italy
+2;Bombardiro Crocodilo;100;Bombarda caserta;0;1;0;Italy
+3;Bombombini Gusini;140;;4;1;0;Italy
+4;Lirili Larila;130;;3;1;0;Italy
+5;Brr Brr Patapim;130;;3;1;0;Italy
+6;Brr Brr Tarflem;120;;2;1;0;Italy
+7;Trulimero Trulicina;110;;1;1;0;Italy
+8;Zhuzhuli Buffo;180;;8;1;0;Italy
+9;Tortitilli Mortiri;110;;1;1;0;Italy
+10;Cocosatic Bungus;190;;9;1;0;Italy
+11;Frulli Frulla;120;;2;1;0;Italy
+12;La Vaca Saturno Saturnita;150;;5;1;0;Italy
+13;Penisini de Cocodrilo;160;;6;1;0;Italy
+14;Bri Bri Bicus Dicus;140;;4;1;0;Italy
+15;Serpentini Toiletini;130;;3;1;0;Italy
+16;Bobritto Bandido;150;;5;1;0;Italy
+17;Glorbo Fruttodrillo;170;;7;1;0;Italy
+18;Camelrino Tazzino;120;;2;1;0;Italy
+19;Chimpancés Bananini;110;;1;1;0;Italy
+20;Shimpanzini Bananini Priestini;130;;3;1;0;Italy
+21;Rantasanta Chinaranta;140;;4;1;0;Italy
+22;La Sombra Iluminada;180;;8;1;0;Italy
+23;Hansana Germana;120;;2;1;0;Italy
+24;Sr. Gelantulone el Gerente;160;;6;1;0;Italy
+25;El Razonamiento del Vuoto;190;;9;1;0;Italy
+26;Akulini Cactusini;110;;1;1;0;Italy
+27;Mozzarella de Búfala;150;;5;1;0;Italy
+28;Bailarina Capuchina;130;;3;1;0;Italy
+29;Bombardero Lucertola;140;;4;1;0;Italy
+30;Trippi Troppi;110;;1;1;0;Italy
+31;Burbaloni Luliloli;120;;2;1;0;Italy
+32;Capuchino Asesino;150;;5;1;0;Italy
+33;Talpa Di Ferro;130;;3;1;0;Italy
+34;Tracotocutulo;170;;7;1;0;Italy
+35;Bobrini Cocosini;140;;4;1;0;Italy
+36;Frigo Camello;130;;3;1;0;Italy
+37;El Szczurito Kurwito Golfito;190;;9;1;0;Italy
+38;Crocodildo Penisini;150;;5;1;0;Italy
+39;Bobritto Bandito;140;;4;1;0;Italy
+40;Markus der Kaktus;120;;2;1;0;Germany
+41;Jochen der Mantarochen;110;;1;1;0;Germany
+42;Mira la Cebra con Lepra;170;;7;1;0;Spain
+43;Peligroso Bearito;150;;5;1;0;Spain
+44;Meterito Bearito;160;;6;1;0;Spain
+45;Tung Tung Tung Sahur;130;;3;1;0;Indonesia
+46;Istri Tung Tung Tung Sahur;130;;3;1;0;Indonesia
+47;Anak Tung Tung Tung Sahur;120;;2;1;0;Indonesia
+48;Tung Tang Tung Tang Tung Shafar;150;;5;1;0;Indonesia
+49;Garamaraman dan Madudungdung tak Tuntung Perkuntung;190;;9;1;0;Indonesia
+50;Hasta Tobi Tob Tob;130;;3;1;0;Spain
+51;Generale struzzo barba;140;;4;1;0;Italy
+52;WhatsApp Mark;180;;8;1;0;USA
+53;The Lion;180;;8;1;1;USA
