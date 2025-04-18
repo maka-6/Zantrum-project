@@ -10,6 +10,7 @@ public class Card {
     private String description;
     private String origin;
     Raylib.Texture texture;
+    boolean available;
 
     public enum CardType {
         ATTACK,
@@ -27,7 +28,7 @@ public class Card {
     private boolean action;
 
 
-    public Card(String name, int number, int life, String description, int rarity, String origin, CardType type) {
+    public Card(String name, int number, int life, String description, int rarity, String origin, CardType type, Raylib.Texture texture, boolean available) {
         this.name = name;
         this.number = number;
         this.life = life;
@@ -36,6 +37,8 @@ public class Card {
         this.action = true;
         this.origin = origin;
         this.type = type;
+        this.texture = texture;
+        this.available = available;
     }
 
     // get
@@ -63,30 +66,43 @@ public class Card {
     public CardType getType() {
         return type;
     }
+    public Raylib.Texture getTexture() {
+        return texture;
+    }
+    public boolean isAvailable() {
+        return available;
+    }
+
 
     // set
     public void setName(String name) {
         this.name = name;
     }
-    public void SetNumber(int number) {
+    public void setNumber(int number) {
         this.number = number;
     }
-    public void SetLife(int life) {
+    public void setLife(int life) {
         this.life = life;
     }
-    public void SetDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
-    public void SetRarity(int rarity) {
+    public void setRarity(int rarity) {
         this.rarity = rarity;
     }
-    public void SetAction(boolean action) {
+    public void setAction(boolean action) {
         this.action = action;
     }
-    public void SetOrigin(String origin) {
+    public void setOrigin(String origin) {
         this.origin = origin;
     }
-    public void SetType(CardType type) {
+    public void setType(CardType type) {
         this.type = type;
+    }
+    public void setTexture(Raylib.Texture texture) {
+        this.texture = texture;
+    }
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }

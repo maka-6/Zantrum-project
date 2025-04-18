@@ -1,10 +1,12 @@
 package Zantrum.cards;
 
+import com.raylib.Raylib;
+
 public class DefenseCard extends Card{
     int defense;
 
-    public DefenseCard(String name, int life, int number, int defense, String description, int rarity, String origin) {
-        super(name, life, number, description, rarity, origin, CardType.DEFENSE);
+    public DefenseCard(String name, int life, int number, int defense, String description, int rarity, String origin, Raylib.Texture texture, boolean available ) {
+        super(name, life, number, description, rarity, origin, CardType.DEFENSE, texture, available);
         this.defense = defense;
     }
 

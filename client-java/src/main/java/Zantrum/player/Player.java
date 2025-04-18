@@ -1,5 +1,7 @@
 package Zantrum.player;
 
+import com.raylib.Raylib;
+
 import javax.swing.*;
 
 public class Player {
@@ -11,7 +13,7 @@ public class Player {
     private int level;
     private int xp;
     private Inventory inventory;
-    ImageIcon icon;
+    private Raylib.Texture icon;
 
     public Player(int id, String name, int level, int xp, Inventory inventory) {
         this.id = id;
@@ -19,36 +21,43 @@ public class Player {
         this.level = level;
         this.xp = xp;
         this.inventory = inventory;
+        icon = new Raylib.Texture(null);
     }
 
     // get
-    int getId(){
+    public int getId(){
         return id;
     }
-    String getName(){
+    public String getName(){
         return name;
     }
-    int getLevel(){
+    public int getLevel(){
         return level;
     }
-    int getXp(){
+    public int getXp(){
         return xp;
     }
-    Inventory getInventory(){
+    public Inventory getInventory(){
         return inventory;
+    }
+    public Raylib.Texture getIcon(){
+        return icon;
     }
 
     // set
-    void setName(String name){
+    public void setName(String name){
         this.name = name;
     }
-    void setLevel(int level){
+    public void setLevel(int level){
         this.level = level;
     }
-    void setXp(int xp){
+    public void setXp(int xp){
         this.xp = xp;
     }
-    void setInventory(Inventory inventory){
+    public void setInventory(Inventory inventory){
         this.inventory = inventory;
+    }
+    public void setIcon(Raylib.Texture icon){
+        this.icon = icon;
     }
 }

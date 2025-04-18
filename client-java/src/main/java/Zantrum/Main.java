@@ -9,7 +9,7 @@ import static com.raylib.Raylib.*;
 public class Main {
     public static void main(String[] args) {
 
-        // Match game = new Match(new Player(0, "Zantrum", 0, 0, null));
+        GameSession game = new GameSession();
 
         System.out.println("Hello World!");
 

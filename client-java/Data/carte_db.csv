@@ -1,54 +1,54 @@
-﻿id;name;life;description;rarity;type;effect;origin
-1;Tralalero Tralala;100;Picchia con una mazza;0;1;0;Italy
-2;Bombardiro Crocodilo;100;Bombarda caserta;0;1;0;Italy
-3;Bombombini Gusini;140;;4;1;0;Italy
-4;Lirili Larila;130;;3;1;0;Italy
-5;Brr Brr Patapim;130;;3;1;0;Italy
-6;Brr Brr Tarflem;120;;2;1;0;Italy
-7;Trulimero Trulicina;110;;1;1;0;Italy
-8;Zhuzhuli Buffo;180;;8;1;0;Italy
-9;Tortitilli Mortiri;110;;1;1;0;Italy
-10;Cocosatic Bungus;190;;9;1;0;Italy
-11;Frulli Frulla;120;;2;1;0;Italy
-12;La Vaca Saturno Saturnita;150;;5;1;0;Italy
-13;Penisini de Cocodrilo;160;;6;1;0;Italy
-14;Bri Bri Bicus Dicus;140;;4;1;0;Italy
-15;Serpentini Toiletini;130;;3;1;0;Italy
-16;Bobritto Bandido;150;;5;1;0;Italy
-17;Glorbo Fruttodrillo;170;;7;1;0;Italy
-18;Camelrino Tazzino;120;;2;1;0;Italy
-19;Chimpancés Bananini;110;;1;1;0;Italy
-20;Shimpanzini Bananini Priestini;130;;3;1;0;Italy
-21;Rantasanta Chinaranta;140;;4;1;0;Italy
-22;La Sombra Iluminada;180;;8;1;0;Italy
-23;Hansana Germana;120;;2;1;0;Italy
-24;Sr. Gelantulone el Gerente;160;;6;1;0;Italy
-25;El Razonamiento del Vuoto;190;;9;1;0;Italy
-26;Akulini Cactusini;110;;1;1;0;Italy
-27;Mozzarella de Búfala;150;;5;1;0;Italy
-28;Bailarina Capuchina;130;;3;1;0;Italy
-29;Bombardero Lucertola;140;;4;1;0;Italy
-30;Trippi Troppi;110;;1;1;0;Italy
-31;Burbaloni Luliloli;120;;2;1;0;Italy
-32;Capuchino Asesino;150;;5;1;0;Italy
-33;Talpa Di Ferro;130;;3;1;0;Italy
-34;Tracotocutulo;170;;7;1;0;Italy
-35;Bobrini Cocosini;140;;4;1;0;Italy
-36;Frigo Camello;130;;3;1;0;Italy
-37;El Szczurito Kurwito Golfito;190;;9;1;0;Italy
-38;Crocodildo Penisini;150;;5;1;0;Italy
-39;Bobritto Bandito;140;;4;1;0;Italy
-40;Markus der Kaktus;120;;2;1;0;Germany
-41;Jochen der Mantarochen;110;;1;1;0;Germany
-42;Mira la Cebra con Lepra;170;;7;1;0;Spain
-43;Peligroso Bearito;150;;5;1;0;Spain
-44;Meterito Bearito;160;;6;1;0;Spain
-45;Tung Tung Tung Sahur;130;;3;1;0;Indonesia
-46;Istri Tung Tung Tung Sahur;130;;3;1;0;Indonesia
-47;Anak Tung Tung Tung Sahur;120;;2;1;0;Indonesia
-48;Tung Tang Tung Tang Tung Shafar;150;;5;1;0;Indonesia
-49;Garamaraman dan Madudungdung tak Tuntung Perkuntung;190;;9;1;0;Indonesia
-50;Hasta Tobi Tob Tob;130;;3;1;0;Spain
-51;Generale struzzo barba;140;;4;1;0;Italy
-52;WhatsApp Mark;180;;8;1;0;USA
-53;The Lion;180;;8;1;1;USA
+﻿available;id;name;life;texture;description;rarity;type;effect;origin
+1;1;Tralalero Tralala;100;;Un personaggio con un nome che evoca forza e vitalità. Pronto a colpire senza paura.;0;1;;Italy
+1;2;Bombardiro Crocodilo;120;;Un imponente coccodrillo che sferra attacchi devastanti.;0;1;;Italy
+1;3;Bombombini Gusini;80;;Un personaggio veloce e imprevedibile, che colpisce con attacchi esplosivi.;4;1;;Italy
+1;4;Lirili Larila;90;;Agile e pronta a parare, questa figura si dedica alla protezione.;3;2;;Italy
+1;5;Brr Brr Patapim;110;;Resistente e forte, è in grado di respingere gli attacchi più violenti.;3;2;;Italy
+1;6;Brr Brr Tarflem;100;;Un personaggio che può proteggere gli alleati da ogni attacco.;2;2;;Italy
+1;7;Trulimero Trulicina;95;;Un difensore esperto, pronto a sostenere i compagni.;1;2;;Italy
+1;8;Zhuzhuli Buffo;80;;Un personaggio allegro e strano, che porta cura e sollievo.;8;3;;Italy
+1;9;Tortitilli Mortiri;110;;Un robusto difensore, sempre pronto a proteggere i suoi compagni.;1;2;;Italy
+1;10;Cocosatic Bungus;100;;Un personaggio con un grande potenziale offensivo.;9;1;;Italy
+1;11;Frulli Frulla;90;;Una figura veloce e potente, ideale per l'attacco.;2;1;;Italy
+1;12;La Vaca Saturno Saturnita;120;;Una vaca gigante che agisce da difensore, resistendo agli attacchi.;5;2;;Italy
+1;13;Penisini de Cocodrilo;100;;Un attaccante deciso e imponente, pronto a colpire con forza.;6;1;;Italy
+1;14;Bri Bri Bicus Dicus;110;;Un personaggio forte, pronto a infliggere danni devastanti.;4;1;;Italy
+1;15;Serpentini Toiletini;85;;Agile e pronto a difendere, un difensore efficace.;3;2;;Italy
+1;16;Bobritto Bandido;100;;Un bandito esperto nell'attacco, pronto a colpire senza pietà.;5;1;;Italy
+1;17;Glorbo Fruttodrillo;95;;Un personaggio che può curare e rafforzare i compagni.;7;3;;Italy
+1;18;Camelrino Tazzino;110;;Un robusto difensore, perfetto per proteggere gli alleati.;2;2;;Italy
+1;19;Chimpancés Bananini;90;;Agile e potente, questa scimmia è perfetta per l'attacco.;1;1;;Italy
+1;20;Shimpanzini Bananini Priestini;95;;Un difensore agile, pronto a proteggere i suoi alleati.;3;2;;Italy
+1;21;Rantasanta Chinaranta;100;;Un personaggio con grande resistenza, ideale per difendere.;4;2;;Italy
+1;22;La Sombra Iluminada;90;;Un personaggio misterioso, che cura e supporta i compagni.;8;3;;Italy
+0;23;Hansana Germana;110;;Un difensore robusto, sempre pronto a proteggere.;2;2;;Italy
+0;24;Sr. Gelantulone el Gerente;100;;Un attaccante potente, che sfrutta la sua autorità in battaglia.;6;1;;Italy
+0;25;El Razonamiento del Vuoto;80;;Un personaggio etereo, perfetto per curare e mantenere in vita gli alleati.;9;3;;Italy
+1;26;Akulini Cactusini;110;;Un attaccante agile, pronto a colpire con forza.;1;1;;Italy
+1;27;Mozzarella de Búfala;120;;Una difesa impenetrabile, sempre pronta a proteggere.;5;2;;Italy
+1;28;Bailarina Capuchina;90;;Un personaggio che si lancia in attacchi veloci e letali.;3;1;;Italy
+0;29;Bombardero Lucertola;100;;Un attaccante pronto a devastare con il suo stile esplosivo.;4;1;;Italy
+1;30;Trippi Troppi;110;;Un agile combattente in grado di attaccare velocemente.;1;1;;Italy
+1;31;Burbaloni Luliloli;100;;Un difensore esperto, in grado di proteggere gli altri.;2;2;;Italy
+0;32;Capuchino Asesino;120;;Un attaccante esperto in tecniche letali.;5;1;;Italy
+1;33;Talpa Di Ferro;90;;Un difensore robusto e resistente, pronto a proteggere ogni alleato.;3;2;;Italy
+1;34;Tracotocutulo;150;;Un attaccante brutale con una forza devastante.;7;1;;Italy
+1;35;Bobrini Cocosini;140;;Un personaggio che può attaccare con grande potenza.;4;1;;Italy
+1;36;Frigo Camello;130;;Un personaggio che si dedica a difendere i più deboli.;3;2;;Italy
+0;37;El Szczurito Kurwito Golfito;190;;Un personaggio che combina attacco e resistenza in modo letale.;9;1;;Italy
+1;38;Crocodildo Penisini;140;;Un attaccante di grande forza, pronto a colpire senza pietà.;5;1;;Italy
+1;39;Bobritto Bandito;100;;Un bandito scaltro, capace di colpire con astuzia.;4;1;;Italy
+1;40;Markus der Kaktus;110;;Un personaggio che usa la difesa come sua arma principale.;2;2;;Germany
+0;41;Jochen der Mantarochen;90;;Un difensore di grande resistenza, pronto a proteggere il team.;1;2;;Germany
+0;42;Mira la Cebra con Lepra;100;;Un personaggio che cura e aiuta gli alleati a riprendersi.;7;3;;Spain
+0;43;Peligroso Bearito;110;;Un personaggio che usa la forza per attaccare i nemici.;5;1;;Spain
+1;44;Meterito Bearito;90;;Un resistente difensore, perfetto per proteggere i compagni.;6;2;;Spain
+1;45;Tung Tung Tung Sahur;130;;Un personaggio che attacca con grande potenza.;3;1;;Indonesia
+1;46;Istri Tung Tung Tung Sahur;130;;Un difensore che protegge il gruppo da ogni minaccia.;3;2;;Indonesia
+0;47;Anak Tung Tung Tung Sahur;120;;Un curatore che usa il potere della guarigione.;2;3;;Indonesia
+0;48;Tung Tang Tung Tang Tung Shafar;150;;Un potente attaccante pronto a dominare la battaglia.;5;1;;Indonesia
+0;49;Garamaraman dan Madudungdung tak Tuntung Perkuntung;190;;Un devastante attaccante con potenza smisurata.;9;1;;Indonesia
+0;50;Hasta Tobi Tob Tob;130;;Un curatore che ripristina energia ai suoi compagni.;3;3;;Spain
+0;51;Generale struzzo barba;140;;Un attaccante strategico e determinato.;4;1;;Italy
+0;52;WhatsApp Mark;180;;Un personaggio di attacco che manda segnali di forza.;8;1;;USA
+0;53;The Lion;180;;Un leone forte che incute paura e attacca con determinazione.;8;1;;USA
