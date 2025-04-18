@@ -1,8 +1,8 @@
-package Zantrum.Player;
+package Zantrum.player;
 
 import java.util.ArrayList;
 
-import Zantrum.Cards.Card;
+import Zantrum.cards.Card;
 
 public class Deck {
 

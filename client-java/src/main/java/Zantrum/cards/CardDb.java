@@ -1,51 +1,17 @@
-package Zantrum.Player;
+package Zantrum.cards;
 
-import java.util.ArrayList;
-
-import Zantrum.Cards.AttackCard;
-import Zantrum.Cards.Card;
-import Zantrum.Cards.DefenseCard;
-import Zantrum.Cards.HealCard;
-
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.BufferedReader;
+import java.util.ArrayList;
 
-public class Inventory {
+public class CardDb {
 
-    ArrayList<Card> inventory;
-    ArrayList<Card> cardsDb;
-    ArrayList<Deck> deck;
+    private ArrayList<Card> cardsDb;
 
-    public Inventory() {
-        inventory = new ArrayList<>();
+    public CardDb() {
         cardsDb = new ArrayList<>();
         LoadCardsDb(cardsDb);
-        deck = new ArrayList<>();
-    }
-
-    public int getNumDecks() {
-        return deck.size();
-    }
-    public int getNumCards() {
-        return inventory.size();
-    }
-
-    public void addCard(Card card) {
-        inventory.add(card);
-    }
-
-    public void addDeck(Deck deck) {
-        this.deck.add(deck);
-    }
-
-    public void changeDeck(Deck oldDeck, Deck newDeck) {
-        deck.remove(oldDeck);
-        deck.add(newDeck);
-    }
-
-    public void deleteDeck(Deck deck) {
-        this.deck.remove(deck);
     }
 
     private void LoadCardsDb(ArrayList<Card> cards) {
@@ -85,24 +51,15 @@ public class Inventory {
                         heal = effect;
                 }
 
-                Card card;
-
-                switch (Card.CardType.values()[type]) {
-                    case ATTACK:
-                        card = new AttackCard(name, life, id, damage, description, rarity, origin);
-                        break;
-                    case DEFENSE:
-                        card = new DefenseCard(name, life, id, defense, description, rarity, origin);
-                        break;
+                Card card = switch (Card.CardType.values()[type]) {
+                    case ATTACK -> new AttackCard(name, life, id, damage, description, rarity, origin);
+                    case DEFENSE -> new DefenseCard(name, life, id, defense, description, rarity, origin);
                     // altri tipi
-                    case HEAL:
-                        card = new HealCard(name, life, id, heal, description, rarity, origin);
-                        break;
-                        //
-                    case SPECIAL:
-                    default:
-                        card = new Card(name, id, life, description, rarity, origin, Card.CardType.values()[type]);
-                }
+                    case HEAL -> new HealCard(name, life, id, heal, description, rarity, origin);
+                    //
+                    default -> new Card(name, id, life, description, rarity, origin, Card.CardType.values()[type]);
+                };
+
                 cards.add(card);
             }
         } catch (IOException e) {
@@ -110,4 +67,14 @@ public class Inventory {
         }
     }
 
+    // get
+    Card getCardById(int id) {
+        return cardsDb.get(id);
+    }
+    Card getCardByName(String name) {
+        for (Card card : cardsDb) {
+            if (card.getName().equals(name)) return card;
+        }
+        return null;
+    }
 }

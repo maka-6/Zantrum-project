@@ -1,4 +1,6 @@
-package Zantrum.Cards;
+package Zantrum.cards;
+
+import com.raylib.Raylib;
 
 public class Card {
 
@@ -7,6 +9,7 @@ public class Card {
     private int life;
     private String description;
     private String origin;
+    Raylib.Texture texture;
 
     public enum CardType {
         ATTACK,

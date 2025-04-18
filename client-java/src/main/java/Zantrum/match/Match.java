@@ -1,14 +1,23 @@
 package Zantrum.match;
 
-import Zantrum.Player.Player;
+import Zantrum.player.Player;
+
 import java.util.ArrayList;
 
 public class Match {
 
-    ArrayList<Player> players;
+    private final ArrayList<Player> players;
+    private int result;
+    private int turn;
 
-    public Match(ArrayList<Player> players) {
-        this.players = players;
+    public Match() {
+        this.players = new ArrayList<Player>();
+    }
 
+    void addPlayer(Player player) {
+        this.players.add(player);
+    }
+    void removePlayer(Player player) {
+        this.players.remove(player);
     }
 }

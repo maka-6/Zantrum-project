@@ -1,4 +1,4 @@
-package Zantrum.Cards;
+package Zantrum.cards;
 
 public class SpecialEffectCard extends Card {
 
