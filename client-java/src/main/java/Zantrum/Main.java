@@ -1,6 +1,5 @@
 package Zantrum;
 
-import Zantrum.player.Player;
 import Zantrum.match.*;
 
 import static com.raylib.Colors.*;
