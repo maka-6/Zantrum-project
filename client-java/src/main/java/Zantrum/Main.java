@@ -10,6 +10,7 @@ public class Main {
 
         GameSession game = new GameSession();
 
+
         System.out.println("Hello World!");
 
         int height = GetMonitorHeight(1080), width = GetMonitorWidth(1980);
