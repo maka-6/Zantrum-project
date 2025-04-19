@@ -68,12 +68,21 @@ public class CardDb {
                         break;
                 }
 
-                Card card = switch (Card.CardType.values()[type]) {
-                    case ATTACK -> new AttackCard(name, life, id, damage, description, rarity, origin, cardImage, available);
-                    case DEFENSE -> new DefenseCard(name, life, id, defense, description, rarity, origin, cardImage, available);
-                    case HEAL -> new HealCard(name, life, id, heal, description, rarity, origin, cardImage, available);
-                    //
-                    default -> new Card(name, id, life, description, rarity, origin, Card.CardType.values()[type], cardImage, available);
+                Card card = null;
+
+                switch (Card.CardType.values()[type]) {
+                    case ATTACK:
+                        card = new AttackCard(name, life, id, damage, description, rarity, origin, cardImage, available);
+                        break;
+                    case DEFENSE:
+                        new DefenseCard(name, life, id, defense, description, rarity, origin, cardImage, available);
+                        break;
+                    case HEAL:
+                        new HealCard(name, life, id, heal, description, rarity, origin, cardImage, available);
+                        break;
+                    default:
+                        card = new Card(name, id, life, description, rarity, origin, Card.CardType.values()[type], cardImage, available);
+                        break;
                 };
 
                 cards.add(card);
