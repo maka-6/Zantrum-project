@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "m018j4KUVSmEFjHzbfFQlxtbXliywA9ArHaxipL0tlw=",
+  "Source": "ZantrumServer",
+  "BasePath": "_content/ZantrumServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
