@@ -14,7 +14,7 @@ Copyright (c) 2025 maka-6
      - Rimane **open source**.
      - È presente un chiaro riferimento all’autore originale (maka-6).
 
-2. Gli asset (audio, immagini, texture, musica) possono essere usati **solo all’interno di questo progetto o suoi fork gratuiti**.
+2. Gli asset (audio, musica) possono essere usati **solo all’interno di questo progetto o suoi fork gratuiti**.
 
 ---
 
