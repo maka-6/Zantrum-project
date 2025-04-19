@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZantrumServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f74a1144806cb5931a78aef9f0f2384b3672133")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34f210760aa989796a6f0b65adb4dbee5f78c75a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZantrumServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZantrumServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

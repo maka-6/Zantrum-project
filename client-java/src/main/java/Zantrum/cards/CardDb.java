@@ -5,6 +5,8 @@ import com.raylib.Raylib;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class CardDb {
@@ -33,26 +35,28 @@ public class CardDb {
                 if (parts.length < 4) continue;  // ignora righe con troppi pochi campi
 
                 // se disponibile
-                boolean available = parts[0].trim().equals("1");
+                boolean available = parts[0].replace("\uFEFF", "").trim().equals("1");
+                if (!available)
+                    continue;
 
                 // lettura carta
                 int id = Integer.parseInt(parts[1].replace("\uFEFF", "").trim());
 
-                int life = parts[2].isEmpty() ? 0 : Integer.parseInt(parts[2].trim());
+                String name = parts[2].trim();
 
-                String name = parts[3].trim();
+                int life = parts[3].trim().isEmpty() ? 0 : Integer.parseInt(parts[3].trim());
 
-                String description = parts[4].trim();
+                String cardImage = parts[4].trim().replace("\\", "/");
 
-                int rarity = parts[5].isEmpty() ? 1 : Integer.parseInt(parts[4].trim());
+                String description = parts[5].trim();
 
-                int type = (parts.length > 6 && !parts[6].isEmpty()) ? Integer.parseInt(parts[5].trim()) : 1;
+                int rarity = parts[6].isEmpty() ? 1 : Integer.parseInt(parts[6].trim());
 
-                int effect = (parts.length > 7 && !parts[7].isEmpty()) ? Integer.parseInt(parts[6].trim()) : 0;
+                int type = (parts.length > 7 && !parts[7].isEmpty()) ? Integer.parseInt(parts[7].trim()) : 1;
 
-                String origin = parts.length > 8 ? parts[8].trim() : "";
+                int effect = (parts.length > 8 && !parts[8].isEmpty()) ? Integer.parseInt(parts[8].trim()) : 0;
 
-                Raylib.Texture cardImage = Raylib.LoadTexture(parts[9]);
+                String origin = parts.length > 9 ? parts[9].trim() : "";
 
                 switch (type){
                     case 1:
@@ -75,10 +79,10 @@ public class CardDb {
                         card = new AttackCard(name, life, id, damage, description, rarity, origin, cardImage, available);
                         break;
                     case DEFENSE:
-                        new DefenseCard(name, life, id, defense, description, rarity, origin, cardImage, available);
+                        card = new DefenseCard(name, life, id, defense, description, rarity, origin, cardImage, available);
                         break;
                     case HEAL:
-                        new HealCard(name, life, id, heal, description, rarity, origin, cardImage, available);
+                        card = new HealCard(name, life, id, heal, description, rarity, origin, cardImage, available);
                         break;
                     default:
                         card = new Card(name, id, life, description, rarity, origin, Card.CardType.values()[type], cardImage, available);
@@ -93,17 +97,20 @@ public class CardDb {
     }
 
     // get
-    Card getCardById(int id) {
+    public Card getCardById(int id) {
         return cardsDb.get(id);
     }
-    Card getCardByName(String name) {
+    public Card getCardByName(String name) {
         for (Card card : cardsDb) {
             if (card.getName().equals(name)) return card;
         }
         return null;
     }
+    public int getCardCount() {
+        return cardsDb.size();
+    }
 
-    void setAvailable(Card card, boolean available) {
+    public void setAvailable(Card card, boolean available) {
         // Itera su tutte le carte nel database
         for (Card c : cardsDb) {
             // Controlla se l'ID della carta corrisponde

@@ -6,7 +6,7 @@ public class AttackCard extends Card {
     int damage;
     CardType type;
 
-    public AttackCard(String name, int life, int number, int damage, String description, int rarity, String origin, Raylib.Texture texture, boolean available ) {
+    public AttackCard(String name, int life, int number, int damage, String description, int rarity, String origin, String texture, boolean available ) {
         super(name, life, number, description, rarity, origin, CardType.ATTACK, texture, available);
         this.damage = damage;
     }

@@ -9,8 +9,13 @@ public class Card {
     private int life;
     private String description;
     private String origin;
+    String texturePath;
     Raylib.Texture texture;
     boolean available;
+
+    private int exp;
+    private int level;
+
 
     public enum CardType {
         ATTACK,
@@ -28,7 +33,7 @@ public class Card {
     private boolean action;
 
 
-    public Card(String name, int number, int life, String description, int rarity, String origin, CardType type, Raylib.Texture texture, boolean available) {
+    public Card(String name, int number, int life, String description, int rarity, String origin, CardType type, String texturePath, boolean available) {
         this.name = name;
         this.number = number;
         this.life = life;
@@ -37,7 +42,7 @@ public class Card {
         this.action = true;
         this.origin = origin;
         this.type = type;
-        this.texture = texture;
+        this.texturePath = texturePath;
         this.available = available;
     }
 
@@ -66,8 +71,8 @@ public class Card {
     public CardType getType() {
         return type;
     }
-    public Raylib.Texture getTexture() {
-        return texture;
+    public String getTexturePath() {
+        return texturePath;
     }
     public boolean isAvailable() {
         return available;
@@ -104,5 +109,22 @@ public class Card {
     }
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public void loadTextureIfNeeded() {
+        if (texture == null && texturePath != null) {
+            texture = Raylib.LoadTexture(texturePath.replace("\\", "/"));
+        }
+    }
+
+    public void unloadTexture() {
+        if (texture != null) {
+            Raylib.UnloadTexture(texture);
+            texture = null;
+        }
+    }
+
+    public Raylib.Texture getTexture() {
+        return texture;
     }
 }

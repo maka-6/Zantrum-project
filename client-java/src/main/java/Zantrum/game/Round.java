@@ -34,6 +34,9 @@ public class Round {
     public int getScore() {
         return score;
     }
+    public CardDb getCardDb() {
+        return cardDb;
+    }
 
     public int getTotalDamage() {
         return totalDamage;
