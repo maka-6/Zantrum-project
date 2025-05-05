@@ -4,18 +4,18 @@ import com.raylib.Raylib;
 
 public class Card {
 
-    private String name;
-    private int number;
+    private final String name;
+    private final int number;
     private int life;
-    private String description;
-    private String origin;
+    private final String description;
+    private final String origin;
     String texturePath;
     Raylib.Texture texture;
     boolean available;
 
-    private int exp;
+    // scelte future sulle carte
+    private int xp;
     private int level;
-
 
     public enum CardType {
         ATTACK,
@@ -24,10 +24,10 @@ public class Card {
         SPECIAL
     }
 
-    private CardType type;
+    private final CardType type;
 
     // rarità
-    private int rarity;
+    private final int rarity;
 
     // se la carta e stata eliminata
     private boolean action;
@@ -44,6 +44,8 @@ public class Card {
         this.type = type;
         this.texturePath = texturePath;
         this.available = available;
+        this.xp = 0;
+        this.level = 0;
     }
 
     // get
@@ -62,7 +64,7 @@ public class Card {
     public int getRarity() {
         return rarity;
     }
-    public boolean isAction() {
+    public boolean isOnAction() {
         return action;
     }
     public String getOrigin() {
@@ -77,38 +79,30 @@ public class Card {
     public boolean isAvailable() {
         return available;
     }
+    public int getXp() {
+        return xp;
+    }
+    public int getLevel() {
+        return level;
+    }
+
+    public void addXp(int xp) {
+        this.xp += xp;
+    }
+    public void addLevel() {
+        this.level++;
+    }
+    public void addLife(int life) {
+        this.life += life;
+    }
 
 
     // set
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setNumber(int number) {
-        this.number = number;
-    }
-    public void setLife(int life) {
-        this.life = life;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public void setRarity(int rarity) {
-        this.rarity = rarity;
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
     public void setAction(boolean action) {
         this.action = action;
-    }
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-    public void setType(CardType type) {
-        this.type = type;
-    }
-    public void setTexture(Raylib.Texture texture) {
-        this.texture = texture;
-    }
-    public void setAvailable(boolean available) {
-        this.available = available;
     }
 
     public void loadTextureIfNeeded() {

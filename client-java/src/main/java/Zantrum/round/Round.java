@@ -1,4 +1,4 @@
-package Zantrum.game;
+package Zantrum.round;
 
 import Zantrum.cards.CardDb;
 import Zantrum.player.Player;
@@ -6,21 +6,17 @@ import com.raylib.Raylib;
 
 public class Round {
 
-    private Player player;
     private CardDb cardDb;
 
     private int score;
     private int totalDamage;
+    private int roundNum;
 
-    public Round() {
+    public Round(int roundNum) {
         this.cardDb = new CardDb();
-        this.player = new Player(0, "Zantrum", 0, 0, null);
         this.score = 0;
         this.totalDamage = 0;
-    }
-
-    public void setPlayerPicture(Raylib.Texture playerPicture) {
-        this.player.setIcon(playerPicture);
+        this.roundNum = roundNum;
     }
 
     public void updateScore(int points) {

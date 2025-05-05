@@ -1,5 +1,4 @@
-﻿
-1;1;Tralalero Tralala;100;Data/textures-cards/Tralalero_tralala.png;Un personaggio con un nome che evoca forza e vitalità. Pronto a colpire senza paura.;0;1;0;Italy;0;0
+﻿1;1;Tralalero Tralala;100;Data/textures-cards/Tralalero_tralala.png;Un personaggio con un nome che evoca forza e vitalità. Pronto a colpire senza paura.;0;1;0;Italy;0;0
 1;2;Bombardiro Crocodilo;120;Data/textures-cards/Bombardiro_Crocodilo.png;Un imponente coccodrillo che sferra attacchi devastanti.;0;1;0;Italy;0;0
 1;3;Bombombini Gusini;80;Data/textures-cards/Bombini_Gusini.png;Un personaggio veloce e imprevedibile, che colpisce con attacchi esplosivi.;4;1;0;Italy;0;0
 1;4;Lirili Larila;90;Data/textures-cards/Lirili_rili_ralila.png;Agile e pronta a parare, questa figura si dedica alla protezione.;3;2;0;Italy;0;0
@@ -28,7 +27,7 @@
 1;27;Mozzarella de Búfala;120;;Una difesa impenetrabile, sempre pronta a proteggere.;5;2;0;Italy;0;0
 1;28;Bailarina Capuchina;90;Data/textures-cards/Markus_der_Kaktus.png;Un personaggio che si lancia in attacchi veloci e letali.;3;1;0;Italy;0;0
 0;29;Bombardero Lucertola;100;;Un attaccante pronto a devastare con il suo stile esplosivo.;4;1;0;Italy;0;0
-1;30;Trippi Troppi;110;Data/textures-cards/Anomali_tung_tung_tun/g.png;Un agile combattente in grado di attaccare velocemente.;1;1;0;Italy;0;0
+1;30;Trippi Troppi;110;Data/textures-cards/Anomali_tung_tung_tung.png;Un agile combattente in grado di attaccare velocemente.;1;1;0;Italy;0;0
 0;31;Burbaloni Luliloli;100;;Un difensore esperto, in grado di proteggere gli altri.;2;2;0;Italy;0;0
 1;32;Capuchino Asesino;120;Data/textures-cards/Capuchino_Assassino.png;Un attaccante esperto in tecniche letali.;5;1;0;Italy;0;0
 1;33;Talpa Di Ferro;90;Data/textures-cards/Talpa_di_Ferro.png;Un difensore robusto e resistente, pronto a proteggere ogni alleato.;3;2;0;Italy;0;0
@@ -51,3 +50,4 @@
 0;51;Generale struzzo barba;140;;Un attaccante strategico e determinato.;4;1;0;Italy;0;0
 0;52;WhatsApp Mark;180;;Un personaggio di attacco che manda segnali di forza.;8;1;0;USA;0;0
 0;53;The Lion;180;;Un leone forte che incute paura e attacca con determinazione.;8;1;0;USA;0;0
+0;54;Steve;200;;Nothing to see;10;1;0;Minecraft-verse;0;0

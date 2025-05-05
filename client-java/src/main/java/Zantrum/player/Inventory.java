@@ -5,8 +5,8 @@ import Zantrum.cards.Card;
 
 public class Inventory {
 
-    ArrayList<Card> inventory;
-    ArrayList<Deck> deck;
+    private ArrayList<Card> inventory;
+    private ArrayList<Deck> deck;
 
     public Inventory() {
         inventory = new ArrayList<>();
@@ -18,6 +18,9 @@ public class Inventory {
     }
     public int getNumCards() {
         return inventory.size();
+    }
+    public ArrayList<Card> getInventory() {
+        return inventory;
     }
 
     public void addCard(Card card) {

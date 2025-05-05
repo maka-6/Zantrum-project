@@ -97,6 +97,9 @@ public class CardDb {
     }
 
     // get
+    public int getCardsCount() {
+        return cardsDb.size();
+    }
     public Card getCardById(int id) {
         return cardsDb.get(id);
     }
