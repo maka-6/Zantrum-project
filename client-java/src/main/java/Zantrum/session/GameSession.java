@@ -1,10 +1,8 @@
 package Zantrum.session;
 
-import Zantrum.FontUtils;
 import Zantrum.cards.CardDb;
 import Zantrum.player.Player;
 import Zantrum.round.Round;
-import Zantrum.session.Menu;
 import com.raylib.Raylib;
 
 import java.util.ArrayList;
@@ -21,11 +19,12 @@ public class GameSession {
     private final int result;
     private int turn;
     private boolean turnOver;
-    private Menu menu;
+    private Interfaces interfaces;
 
     private GameState gameState;
 
     enum GameState {
+        START,
         MAIN_MENU,
         GAME,
         PAUSE,
@@ -34,7 +33,7 @@ public class GameSession {
     }
 
     public GameSession() {
-        this.gameState = GameState.MAIN_MENU;
+        this.gameState = GameState.START;
         this.result = 0;  // Inizializzare con un risultato predefinito, ad esempio 0
         this.turn = 1;    // Inizializzare con il primo turno
         this.rounds = new ArrayList<>();
@@ -76,7 +75,7 @@ public class GameSession {
     public void GameLoop(ArrayList<Round> games) {
 
         // La partita se rimarrà su questa classe...
-        int fps = 60;
+        int fps = 120;
         Raylib.Image icon = LoadImage("resources/icon.png");
 
         SetWindowIcon(icon);
@@ -84,15 +83,16 @@ public class GameSession {
         ToggleFullscreen();
         SetTargetFPS(fps);
 
-        menu = new Menu();
-        Font font = loadHighQualityFont("resources/fonts/BungeeSpice-Regular.ttf",200);
+        //
+        interfaces = new Interfaces();
+        //
+        Raylib.Font font = loadHighQualityFont("resources/fonts/BungeeSpice-Regular.ttf",200);
 
-        /*
+
         // 🔽 1. Carica tutte le texture una volta sola
         for (int i = 0; i < cards.getCardCount(); i++) {
             cards.getCardById(i).loadTextureIfNeeded();
         }
-        */
 
         //DrawCard drawCard = new DrawCard(cards.getCardById(0),new Vector2().x(0).y(0), new Vector2().x(0).y(0),font);
 
@@ -100,46 +100,32 @@ public class GameSession {
         // 🔁 2. Loop di rendering
         while (!WindowShouldClose()) {
             BeginDrawing();
-            ClearBackground(BLACK);
 
             //drawCard.draw(cards.getCardById(0));
-
-            switch (gameState) {
-                case MAIN_MENU:
-                    menu.drawMainMenu(font,GetScreenWidth(),GetScreenHeight()); // Disegna il menu solo una volta
-                    if (IsKeyPressed(KEY_ENTER)) gameState = GameState.GAME;
-                    break;
-
-                case GAME:
-                    //drawGame();
-                    //updateGameLogic();
-                    if (IsKeyPressed(KEY_SPACE)) gameState = GameState.PAUSE;
-                    break;
-
-                case PAUSE:
-                    //drawPauseScreen();
-                    if (IsKeyPressed(KEY_ENTER)) gameState = GameState.GAME;
-                    break;
-
-                case GAME_OVER:
-                    //drawGameOver();
-                    break;
-                case EXIT:
-                    gameState = GameState.EXIT;
-                    break;
-            }
+            update();
+            render(font);
 
             DrawText("FPS: " + GetFPS(), 20, 20, 20, GREEN);
             EndDrawing();
         }
 
-        /*
         // 🧹 3. Scarica tutte le texture alla fine
         for (int i = 0; i < cards.getCardCount(); i++) {
             cards.getCardById(i).unloadTexture();
         }
-        */
 
         CloseWindow();
+    }
+
+    public void update() {
+        // Gestisci input e cambia stato se necessario
+        if (IsKeyPressed(KEY_ENTER) && gameState == GameState.START) {
+            gameState = GameState.MAIN_MENU;
+        }
+        // ...
+    }
+
+    public void render(Font font) {
+        interfaces.draw(font, GetScreenWidth(), GetScreenHeight(), gameState);
     }
 }
