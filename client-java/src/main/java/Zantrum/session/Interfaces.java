@@ -18,6 +18,23 @@ public class Interfaces {
         }
     }
 
+    public void transition(Color color, int speed) {
+
+        for (int alpha = 0; alpha <= 255; alpha += speed) {
+            ClearBackground(RAYWHITE);
+            // Qui puoi ridisegnare lo stato attuale o lasciare vuoto
+            DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(color, alpha / 255.0f));
+        }
+
+        // Cambia stato qui se necessario
+
+        for (int alpha = 255; alpha >= 0; alpha -= speed) {
+            ClearBackground(RAYWHITE);
+            // Qui puoi disegnare il nuovo stato o lasciare vuoto
+            DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(color, alpha / 255.0f));
+        }
+    }
+
     public void draw(Font font, int screenWidth, int screenHeight, GameSession.GameState currentState) {
         switch (currentState) {
             case START: drawStart(font, screenWidth, screenHeight); break;
@@ -30,9 +47,6 @@ public class Interfaces {
 
         ClearBackground(BLACK);
 
-        for (Particle p : particles) p.update();
-        drawAllParticles();
-        // ... Testi di avvio
         // disegno le linee tutte in una volta + ottimizzata
         for (Particle p : particles) {
             p.update();
@@ -49,7 +63,7 @@ public class Interfaces {
         origin.x(textSize.x() / 2.0f).y(textSize.y() / 2.0f);
 
         // Calcola la dimensione del testo
-        Vector2 textSize2 = MeasureTextEx(font, "Press any key", 50, 2);
+        Vector2 textSize2 = MeasureTextEx(font, "Press enter", 50, 2);
         // Posizione al centro dello schermo
         Vector2 position2 = new Vector2();  // più visibile
         position2.x(screenWidth / 2.0f).y(screenHeight * 0.75f);
@@ -66,6 +80,31 @@ public class Interfaces {
 
     private void drawMainMenu(Font font, int screenWidth, int screenHeight) {
         // TODO: Aggiungi voci di menu, sfondi, ecc.
+        ClearBackground(BLACK);
+
+        // disegno le linee tutte in una volta + ottimizzata
+        for (Particle p : particles) {
+            p.update();
+        }
+        drawAllParticles(); // Tutto in una sola chiamata GPU
+
+        DrawRectangle(0,0, 200, 200, RED);
+        DrawRectangle(screenWidth-200,screenHeight-200, 200, 200, BLUE);
+        DrawRectangle(0,screenHeight-200, 200, 200, GREEN);
+        DrawRectangle(screenWidth-200,0, 200, 200, VIOLET);
+
+        DrawCircle(screenWidth/2, screenHeight/2,(screenHeight+screenWidth)/10,ORANGE);
+
+        // Calcola la dimensione del testo
+        Vector2 textSize = MeasureTextEx(font, "Benvenuto", 100, 2);
+        // Posizione al centro dello schermo
+        Vector2 position = new Vector2();  // leggermente sopra
+        position.x(screenWidth / 2.0f).y(screenHeight / 2.0f);
+        // Origine centrata rispetto alla scritta
+        Vector2 origin = new Vector2();
+        origin.x(textSize.x() / 2.0f).y(textSize.y() / 2.0f);
+
+        DrawTextPro(font, "Benvenuto",position, origin, 0, 100,2, WHITE);
 
 
     }
@@ -76,10 +115,36 @@ public class Interfaces {
 
     private void drawPauseMenu(Font font, int screenWidth, int screenHeight) {
         // Menu di pausa
+        ClearBackground(BLACK);
+
+        // ... Testi di avvio
+        // disegno le linee tutte in una volta + ottimizzata
+        for (Particle p : particles) {
+            p.update();
+        }
+        drawAllParticles(); // Tutto in una sola chiamata GPU
+        DrawRectangle(0,0, 200, 200, RED);
     }
 
     private void drawGameOver(Font font, int screenWidth, int screenHeight) {
         // Schermata Game Over
+        ClearBackground(BLACK);
+        for (Particle p : particles) p.update();
+        drawAllParticles();
+        for (Particle p : particles) p.update();
+        drawAllParticles(); // Tutto in una sola chiamata GPU
+        for (Particle p : particles) p.update();
+        drawAllParticles();
+        // Calcola la dimensione del testo
+        Vector2 textSize = MeasureTextEx(font, "Game Over :(", 100, 2);
+        // Posizione al centro dello schermo
+        Vector2 position = new Vector2();  // leggermente sopra
+        position.x(screenWidth / 2.0f).y(screenHeight / 2.0f);
+        // Origine centrata rispetto alla scritta
+        Vector2 origin = new Vector2();
+        origin.x(textSize.x() / 2.0f).y(textSize.y() / 2.0f);
+
+        DrawTextPro(font, "Game Over :(",position, origin, 0, 100,2, WHITE);
     }
 
     private void drawAllParticles() {
@@ -109,7 +174,7 @@ class Particle {
     float timeSinceStart;
 
     //
-    static float SPEED = 400f;      //
+    static float SPEED = 600f;      //
     static final float MAX_RADIUS = GetScreenWidth() * 1.5f;        //
 
     public Particle(float angle, float length) {

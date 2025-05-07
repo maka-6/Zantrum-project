@@ -75,7 +75,7 @@ public class GameSession {
     public void GameLoop(ArrayList<Round> games) {
 
         // La partita se rimarrà su questa classe...
-        int fps = 120;
+        int fps = 60;
         Raylib.Image icon = LoadImage("resources/icon.png");
 
         SetWindowIcon(icon);
@@ -105,7 +105,7 @@ public class GameSession {
             update();
             render(font);
 
-            DrawText("FPS: " + GetFPS(), 20, 20, 20, GREEN);
+            DrawText("FPS: " + GetFPS(), 10, 10, 20, GREEN);
             EndDrawing();
         }
 
@@ -120,7 +120,11 @@ public class GameSession {
     public void update() {
         // Gestisci input e cambia stato se necessario
         if (IsKeyPressed(KEY_ENTER) && gameState == GameState.START) {
+            //interfaces.transition(BLACK, 1);
             gameState = GameState.MAIN_MENU;
+        }
+        else if (IsKeyPressed(KEY_ENTER) && gameState == GameState.MAIN_MENU) {
+            gameState = GameState.GAME_OVER;
         }
         // ...
     }
