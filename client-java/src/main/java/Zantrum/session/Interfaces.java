@@ -1,5 +1,9 @@
 package Zantrum.session;
 
+import org.bytedeco.javacpp.Pointer;
+
+import java.util.Random;
+
 import static com.raylib.Colors.*;
 import static com.raylib.Raylib.*;
 
@@ -10,12 +14,15 @@ public class Interfaces {
     private int textSize = 40;
     private int textWidth;
 
+    private Texture texture;
+
     public Interfaces() {
         textWidth = MeasureText(title, textSize);
         particles = new Particle[1000];
         for (int i = 0; i < particles.length; i++) {
             particles[i] = new Particle((float)(Math.random() * 2 * Math.PI), (float)Math.random() * 100);
         }
+        texture = LoadTexture("C:/Users/makao/Downloads/Gigachad-Smiling-Face.png");
     }
 
     public void transition(Color color, int speed) {
@@ -75,7 +82,7 @@ public class Interfaces {
         DrawTextPro(font, "Zantrum", position, origin, 0.0f, 200, 2, RAYWHITE);
 
         // Sottotitolo sotto
-        DrawTextPro(font, "Press any key", position2, origin2, 0.0f, 50, 2, GRAY);
+        DrawTextPro(font, "Press enter", position2, origin2, 0.0f, 50, 2, GRAY);
     }
 
     private void drawMainMenu(Font font, int screenWidth, int screenHeight) {
@@ -106,7 +113,6 @@ public class Interfaces {
 
         DrawTextPro(font, "Benvenuto",position, origin, 0, 100,2, WHITE);
 
-
     }
 
     private void drawGameplayUI(Font font, int screenWidth, int screenHeight) {
@@ -127,6 +133,7 @@ public class Interfaces {
     }
 
     private void drawGameOver(Font font, int screenWidth, int screenHeight) {
+
         // Schermata Game Over
         ClearBackground(BLACK);
         for (Particle p : particles) p.update();
@@ -149,6 +156,7 @@ public class Interfaces {
 
     private void drawAllParticles() {
         rlBegin(RL_LINES);
+        Random rand = new Random();
         for (Particle p : particles) {
             if (p.timeSinceStart < p.delayTime) continue;
             float centerX = GetScreenWidth() / 2.0f;
@@ -158,7 +166,11 @@ public class Interfaces {
             float x2 = centerX + (float) Math.cos(p.angle) * (p.radius + p.length);
             float y2 = centerY + (float) Math.sin(p.angle) * (p.radius + p.length);
             if (Float.isInfinite(x1) || Float.isInfinite(y1) || Float.isInfinite(x2) || Float.isInfinite(y2)) continue;
-            rlColor4ub((byte)255, (byte)255, (byte)255, (byte)255);
+            int red, blue, green;
+            red = rand.nextInt(255);
+            blue = rand.nextInt(255);
+            green = rand.nextInt(255);
+            rlColor4ub((byte)red, (byte)blue, (byte)green, (byte)255);
             rlVertex2f(x1, y1);
             rlVertex2f(x2, y2);
         }

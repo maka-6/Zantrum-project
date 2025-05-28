@@ -25,6 +25,7 @@ public class CardDb {
             int damage = 0;
             int heal = 0;
             int defense = 0;
+            Card card;
 
             while ((line = br.readLine()) != null) {
 
@@ -58,36 +59,7 @@ public class CardDb {
 
                 String origin = parts.length > 9 ? parts[9].trim() : "";
 
-                switch (type){
-                    case 1:
-                        damage = effect;
-                        break;
-                    case 2:
-                        defense = effect;
-                        break;
-                    case 3:
-                        heal = effect;
-                        break;
-                    case 4:
-                        break;
-                }
-
-                Card card = null;
-
-                switch (Card.CardType.values()[type]) {
-                    case ATTACK:
-                        card = new AttackCard(name, life, id, damage, description, rarity, origin, cardImage, available);
-                        break;
-                    case DEFENSE:
-                        card = new DefenseCard(name, life, id, defense, description, rarity, origin, cardImage, available);
-                        break;
-                    case HEAL:
-                        card = new HealCard(name, life, id, heal, description, rarity, origin, cardImage, available);
-                        break;
-                    default:
-                        card = new Card(name, id, life, description, rarity, origin, Card.CardType.values()[type], cardImage, available);
-                        break;
-                };
+                card = new Card(name, life, id, effect, description, rarity, origin, Card.CardType.values()[type] ,cardImage, available);
 
                 cards.add(card);
             }

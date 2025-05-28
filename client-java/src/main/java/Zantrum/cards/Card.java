@@ -3,17 +3,22 @@ package Zantrum.cards;
 import com.raylib.Raylib;
 
 public class Card {
-
     private final String name;
     private final int number;
     private int life;
     private final String description;
     private final String origin;
-    String texturePath;
-    Raylib.Texture texture;
-    boolean available;
+    private Raylib.Texture texture;
+    private String texturePath;
+    private boolean available;
 
-    // scelte future sulle carte
+    // Caratteristiche specifiche delle carte
+    private int damage = 0;  // solo per ATTACK
+    private int defense = 0; // solo per DEFENSE
+    private int healAmount = 0; // solo per HEAL
+    private int specialEffect = 0; // per SPECIAL EFFECT
+
+
     private int xp;
     private int level;
 
@@ -25,27 +30,28 @@ public class Card {
     }
 
     private final CardType type;
-
-    // rarità
     private final int rarity;
-
-    // se la carta e stata eliminata
     private boolean action;
 
-
-    public Card(String name, int number, int life, String description, int rarity, String origin, CardType type, String texturePath, boolean available) {
+    public Card(String name, int life,  int number, int effect, String description, int rarity, String origin, CardType type,
+                String texturePath, boolean available) {
         this.name = name;
         this.number = number;
         this.life = life;
         this.description = description;
         this.rarity = rarity;
-        this.action = true;
         this.origin = origin;
         this.type = type;
         this.texturePath = texturePath;
         this.available = available;
-        this.xp = 0;
-        this.level = 0;
+
+        // Assegna il valore in base al tipo di carta
+        switch (type) {
+            case ATTACK : this.damage = effect;break;
+            case DEFENSE : this.defense = effect;break;
+            case HEAL : this.healAmount = effect;break;
+            case SPECIAL : this.specialEffect = effect;break;
+        }
     }
 
     // get
