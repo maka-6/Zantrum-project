@@ -75,7 +75,7 @@ public class GameSession {
     public void GameLoop(ArrayList<Round> games) {
 
         // La partita se rimarrà su questa classe...
-        int fps = 60;
+        int fps = 165;
         Raylib.Image icon = LoadImage("resources/icon.png");
 
         SetWindowIcon(icon);

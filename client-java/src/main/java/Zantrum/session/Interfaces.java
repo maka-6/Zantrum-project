@@ -166,11 +166,15 @@ public class Interfaces {
             float x2 = centerX + (float) Math.cos(p.angle) * (p.radius + p.length);
             float y2 = centerY + (float) Math.sin(p.angle) * (p.radius + p.length);
             if (Float.isInfinite(x1) || Float.isInfinite(y1) || Float.isInfinite(x2) || Float.isInfinite(y2)) continue;
-            int red, blue, green;
-            red = rand.nextInt(255);
-            blue = rand.nextInt(255);
-            green = rand.nextInt(255);
-            rlColor4ub((byte)red, (byte)blue, (byte)green, (byte)255);
+
+            // int red, blue, green;
+            // red = rand.nextInt(255);
+            // blue = rand.nextInt(255);
+            // green = rand.nextInt(255);
+
+            // rlColor4f(rand.nextFloat(), rand.nextFloat(), rand.nextFloat(), 1.0f);
+            rlColor4f(p.r, p.g, p.b, 1.0f);
+
             rlVertex2f(x1, y1);
             rlVertex2f(x2, y2);
         }
@@ -185,6 +189,8 @@ class Particle {
     float delayTime;
     float timeSinceStart;
 
+    float r, g, b; // colore
+
     //
     static float SPEED = 600f;      //
     static final float MAX_RADIUS = GetScreenWidth() * 1.5f;        //
@@ -192,7 +198,13 @@ class Particle {
     public Particle(float angle, float length) {
         this.angle = angle;
         this.length = length;
+
+        // colore casuale iniziale
+        r = (float)Math.random();
+        g = (float)Math.random();
+        b = (float)Math.random();
         reset();
+
     }
 
     //
@@ -215,7 +227,7 @@ class Particle {
         radius += dt * SPEED;
 
         // rotazione
-        angle+=0.00f;
+        angle+=0.001f;
 
         //
         if (radius > MAX_RADIUS || Float.isNaN(radius) || Float.isInfinite(radius)) {
