@@ -227,7 +227,7 @@ class Particle {
         radius += dt * SPEED;
 
         // rotazione
-        angle+=0.001f;
+        angle+=0f;
 
         //
         if (radius > MAX_RADIUS || Float.isNaN(radius) || Float.isInfinite(radius)) {
