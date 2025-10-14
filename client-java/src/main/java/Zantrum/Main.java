@@ -1,6 +1,6 @@
 package Zantrum;
 
-import Zantrum.session.GameSession;
+import Zantrum.controller.GameSession;
 
 public class Main {
     public static void main(String[] args) {
