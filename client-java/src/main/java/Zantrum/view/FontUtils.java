@@ -1,4 +1,4 @@
-package Zantrum.ui;
+package Zantrum.view;
 
 import com.raylib.Raylib;
 import com.raylib.Raylib.Font;

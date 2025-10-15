@@ -1,6 +1,6 @@
 package Zantrum.model;
 
-enum GameState {
+public enum GameState {
     START,
     MAIN_MENU,
     GAME,

@@ -1,6 +1,6 @@
-package Zantrum.controller;
+package Zantrum.interfaces;
 
-import Zantrum.controller.GameSession;
+import Zantrum.model.GameState;
 
 import java.util.Random;
 
@@ -42,7 +42,7 @@ public class Interfaces {
         }
     }
 
-    public void draw(Font font, int screenWidth, int screenHeight, GameSession.GameState currentState) {
+    public void draw(Font font, int screenWidth, int screenHeight, GameState currentState) {
         switch (currentState) {
             case START: drawStart(font, screenWidth, screenHeight); break;
             case MAIN_MENU: drawMainMenu(font, screenWidth, screenHeight); break;

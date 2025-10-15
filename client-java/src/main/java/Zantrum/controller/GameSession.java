@@ -1,69 +1,64 @@
 package Zantrum.controller;
 
+import Zantrum.interfaces.Interfaces;
 import Zantrum.model.CardDb;
-import Zantrum.model.Player;
+// import Zantrum.model.Player;
+import Zantrum.model.GameState;
 import com.raylib.Raylib;
 
+import javax.lang.model.type.NullType;
 import java.util.ArrayList;
 
-import static Zantrum.ui.FontUtils.loadHighQualityFont;
+import static Zantrum.view.FontUtils.loadHighQualityFont;
 import static com.raylib.Colors.*;
 import static com.raylib.Raylib.*;
 
 public class GameSession {
 
     private final ArrayList<Round> rounds;
+    /*
     private ArrayList<Player> players;
     private final CardDb cards;
     private final int result;
     private int turn;
     private boolean turnOver;
-    private Zantrum.controller.Interfaces interfaces;
+    */
+    private Interfaces interfaces;
+    Raylib.Font font;
 
     private GameState gameState;
 
     public GameSession() {
         this.gameState = GameState.START;
-        this.result = 0;  // Inizializzare con un risultato predefinito, ad esempio 0
-        this.turn = 1;    // Inizializzare con il primo turno
+        //this.result = 0;  // Inizializzare con un risultato predefinito, ad esempio 0
+        //this.turn = 1;    // Inizializzare con il primo turno
         this.rounds = new ArrayList<>();
-        this.turnOver = false;
-
-        cards = new CardDb();
-        GameLoop(rounds);
+        // this.turnOver = false;
+        // cards = new CardDb();
     }
 
-    public void addGame(Round game) {
-        this.rounds.add(game);
-    }
+    // game loop
+    public void startGame(ArrayList<Round> games) {
 
-    // Metodo per aggiornare il turno
-    public void nextTurn() {
-        if (this.turnOver) {
-            this.turn++;
-            this.turnOver = false;
+        /*
+        // 🔽 1. Carica tutte le texture una volta sola
+        for (int i = 0; i < cards.getCardCount(); i++) {
+            cards.getCardById(i).loadTextureIfNeeded();
         }
+        */
+        initWindow();
+        gameLoop();
+        /*
+        // 🧹 3. Scarica tutte le texture alla fine
+        for ( int i = 0; i < cards.getCardCount(); i++ ) {
+            cards.getCardById(i).unloadTexture();
+        }
+        */
+
+        CloseWindow();
     }
 
-    // in caso sia giocata una carta che dia piu turni
-    public void setTurnOver(boolean turnOver) {
-        this.turnOver = turnOver;
-    }
-
-    public int getResult() {
-        return result;
-    }
-
-    public int getTurn() {
-        return turn;
-    }
-
-    public ArrayList<Round> getRounds() {
-        return rounds;
-    }
-
-    public void GameLoop(ArrayList<Round> games) {
-
+    public void initWindow() {
         // La partita se rimarrà su questa classe...
         int fps = 165;
         Raylib.Image icon = LoadImage("resources/icon.png");
@@ -72,21 +67,15 @@ public class GameSession {
         InitWindow(GetMonitorWidth(0), GetMonitorHeight(0), "Zantrum");
         ToggleFullscreen();
         SetTargetFPS(fps);
+        font = loadHighQualityFont("resources/fonts/BungeeSpice-Regular.ttf",200);
 
         //
         interfaces = new Interfaces();
         //
-        Raylib.Font font = loadHighQualityFont("resources/fonts/BungeeSpice-Regular.ttf",200);
 
+    }
 
-        // 🔽 1. Carica tutte le texture una volta sola
-        for (int i = 0; i < cards.getCardCount(); i++) {
-            cards.getCardById(i).loadTextureIfNeeded();
-        }
-
-        //DrawCard drawCard = new DrawCard(cards.getCardById(0),new Vector2().x(0).y(0), new Vector2().x(0).y(0),font);
-
-
+    public void gameLoop() {
         // 🔁 2. Loop di rendering
         while (!WindowShouldClose()) {
             BeginDrawing();
@@ -94,17 +83,13 @@ public class GameSession {
             //drawCard.draw(cards.getCardById(0));
             update();
             render(font);
-
             DrawText("FPS: " + GetFPS(), 10, 10, 20, GREEN);
             EndDrawing();
         }
+    }
 
-        // 🧹 3. Scarica tutte le texture alla fine
-        for ( int i = 0; i < cards.getCardCount(); i++ ) {
-            cards.getCardById(i).unloadTexture();
-        }
-
-        CloseWindow();
+    public ArrayList<Round> getRounds() {
+        return rounds;
     }
 
     public void update() {
