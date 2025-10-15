@@ -2,7 +2,6 @@ package Zantrum.controller;
 
 import Zantrum.model.CardDb;
 import Zantrum.model.Player;
-import Zantrum.controller.Interfaces;
 import com.raylib.Raylib;
 
 import java.util.ArrayList;
@@ -22,15 +21,6 @@ public class GameSession {
     private Zantrum.controller.Interfaces interfaces;
 
     private GameState gameState;
-
-    enum GameState {
-        START,
-        MAIN_MENU,
-        GAME,
-        PAUSE,
-        GAME_OVER,
-        EXIT
-    }
 
     public GameSession() {
         this.gameState = GameState.START;
