@@ -24,21 +24,22 @@ public class GameSession {
     private boolean turnOver;
     */
     private Interfaces interfaces;
-    Raylib.Font font;
+    public Raylib.Font font;
 
     private GameState gameState;
 
     public GameSession() {
+
         this.gameState = GameState.START;
+        this.rounds = new ArrayList<>();
+
         //this.result = 0;  // Inizializzare con un risultato predefinito, ad esempio 0
         //this.turn = 1;    // Inizializzare con il primo turno
-        this.rounds = new ArrayList<>();
         // this.turnOver = false;
         // cards = new CardDb();
     }
 
-    // game loop
-    public void startGame(ArrayList<Round> games) {
+    public void startGame() {
 
         /*
         // 🔽 1. Carica tutte le texture una volta sola
@@ -54,7 +55,6 @@ public class GameSession {
             cards.getCardById(i).unloadTexture();
         }
         */
-
         CloseWindow();
     }
 
@@ -67,7 +67,9 @@ public class GameSession {
         InitWindow(GetMonitorWidth(0), GetMonitorHeight(0), "Zantrum");
         ToggleFullscreen();
         SetTargetFPS(fps);
-        font = loadHighQualityFont("resources/fonts/BungeeSpice-Regular.ttf",200);
+
+
+        this.font = loadHighQualityFont("resources/fonts/BungeeSpice-Regular.ttf",200);
 
         //
         interfaces = new Interfaces();
@@ -75,11 +77,11 @@ public class GameSession {
 
     }
 
+    // game loop
     public void gameLoop() {
         // 🔁 2. Loop di rendering
         while (!WindowShouldClose()) {
             BeginDrawing();
-
             //drawCard.draw(cards.getCardById(0));
             update();
             render(font);

@@ -1,4 +1,4 @@
-package Zantrum.interfaces;
+package Zantrum.model;
 
 import java.util.ArrayList;
 

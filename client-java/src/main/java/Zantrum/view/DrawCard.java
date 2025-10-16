@@ -1,4 +1,4 @@
-package Zantrum.ui;
+package Zantrum.view;
 
 import Zantrum.model.Card;
 import com.raylib.*;

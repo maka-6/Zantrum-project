@@ -1,6 +1,0 @@
-@ZantrumServer_HostAddress = http://localhost:5230
-
-GET {{ZantrumServer_HostAddress}}/api/test/ping/
-Accept: application/json
-
-###

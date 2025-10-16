@@ -9,6 +9,6 @@ public class ZantrumApp {
 
         System.out.println("Hello italy!");
         GameSession session = new GameSession();
-        session.startGame(new ArrayList<>());
+        session.startGame();
     }
 }
