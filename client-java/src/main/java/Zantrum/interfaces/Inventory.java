@@ -2,6 +2,7 @@ package Zantrum.interfaces;
 
 import java.util.ArrayList;
 import Zantrum.model.Card;
+import Zantrum.model.Deck;
 
 public class Inventory {
 
