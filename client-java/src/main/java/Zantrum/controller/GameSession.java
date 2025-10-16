@@ -38,7 +38,7 @@ public class GameSession {
     }
 
     // game loop
-    public void startGame(ArrayList<Round> games) {
+    public void startGame() {
 
         /*
         // 🔽 1. Carica tutte le texture una volta sola
