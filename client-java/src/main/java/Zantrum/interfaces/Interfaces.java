@@ -22,7 +22,7 @@ public class Interfaces {
         for (int i = 0; i < particles.length; i++) {
             particles[i] = new Particle((float)(Math.random() * 2 * Math.PI), (float)Math.random() * 100);
         }
-        texture = LoadTexture("C:/Users/makao/Downloads/Gigachad-Smiling-Face.png");
+        //texture = LoadTexture("C:/Users/makao/Downloads/Gigachad-Smiling-Face.png");
     }
 
     public void transition(Color color, int speed) {
