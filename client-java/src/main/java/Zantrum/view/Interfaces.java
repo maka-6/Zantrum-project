@@ -1,4 +1,4 @@
-package Zantrum.interfaces;
+package Zantrum.view;
 
 import Zantrum.model.GameState;
 
@@ -228,7 +228,7 @@ class Particle {
         radius += dt * SPEED;
 
         // rotazione
-        angle+=.02f;
+        angle+=0f;
 
         //
         if (radius > MAX_RADIUS || Float.isNaN(radius) || Float.isInfinite(radius)) {

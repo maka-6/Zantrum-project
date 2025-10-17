@@ -1,12 +1,11 @@
 package Zantrum.controller;
 
-import Zantrum.interfaces.Interfaces;
-import Zantrum.model.CardDb;
+import Zantrum.view.Interfaces;
 // import Zantrum.model.Player;
 import Zantrum.model.GameState;
 import com.raylib.Raylib;
+import Zantrum.view.InitWindow;
 
-import javax.lang.model.type.NullType;
 import java.util.ArrayList;
 
 import static Zantrum.view.FontUtils.loadHighQualityFont;
@@ -28,6 +27,8 @@ public class GameSession {
 
     private GameState gameState;
 
+    InitWindow window;
+
     public GameSession() {
 
         this.gameState = GameState.START;
@@ -37,6 +38,9 @@ public class GameSession {
         //this.turn = 1;    // Inizializzare con il primo turno
         // this.turnOver = false;
         // cards = new CardDb();
+        window = new InitWindow();
+        this.font = window.font;
+        this.interfaces = window.interfaces;
     }
 
     public void startGame() {
@@ -47,7 +51,7 @@ public class GameSession {
             cards.getCardById(i).loadTextureIfNeeded();
         }
         */
-        initWindow();
+
         gameLoop();
         /*
         // 🧹 3. Scarica tutte le texture alla fine
@@ -56,25 +60,6 @@ public class GameSession {
         }
         */
         CloseWindow();
-    }
-
-    public void initWindow() {
-        // La partita se rimarrà su questa classe...
-        int fps = 165;
-        Raylib.Image icon = LoadImage("resources/icon.png");
-
-        SetWindowIcon(icon);
-        InitWindow(GetMonitorWidth(0), GetMonitorHeight(0), "Zantrum");
-        ToggleFullscreen();
-        SetTargetFPS(fps);
-
-
-        this.font = loadHighQualityFont("resources/fonts/BungeeSpice-Regular.ttf",200);
-
-        //
-        interfaces = new Interfaces();
-        //
-
     }
 
     // game loop
@@ -109,5 +94,4 @@ public class GameSession {
     public void render(Font font) {
         interfaces.draw(font, GetScreenWidth(), GetScreenHeight(), gameState);
     }
-
 }

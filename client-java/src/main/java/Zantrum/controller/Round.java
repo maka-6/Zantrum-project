@@ -5,7 +5,6 @@ import Zantrum.model.CardDb;
 public class Round {
 
     private CardDb cardDb;
-
     private int score;
     private int totalDamage;
     private int roundNum;
@@ -28,6 +27,7 @@ public class Round {
     public int getScore() {
         return score;
     }
+
     public CardDb getCardDb() {
         return cardDb;
     }
