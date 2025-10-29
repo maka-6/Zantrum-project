@@ -1,7 +1,5 @@
 package Zantrum.model;
 
-import Zantrum.model.Card;
-import Zantrum.interfaces.Inventory;
 import com.raylib.Raylib;
 
 import java.io.*;
@@ -64,6 +62,7 @@ public class Player {
         this.icon = icon;
     }
 
+    //
     private void downloadInventoryCSV(Inventory inventory) {
         File file = new File("Data/inventario_db.csv");
         try (PrintWriter writer = new PrintWriter(new FileWriter(file))) {
